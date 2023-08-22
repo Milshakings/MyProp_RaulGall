@@ -1,0 +1,23 @@
+<div id="<%= dom_id client %>">
+  <tr>
+    <th scope="row"><%= client.id %></th>
+    <td>
+    <strong>Name:</strong>
+    <%= client.name %>
+    </td>
+
+  <td>
+    <strong>Age:</strong>
+    <%= client.age %>
+  </td>
+
+  <td>
+    <strong>City:</strong>
+    <%= client.city %>
+  </td>
+  <td><%= link_to client, class: 'btn' do %>
+  <% end %>
+
+   </td>
+</tr>
+</div>

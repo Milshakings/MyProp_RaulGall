@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">MyProp</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav  ms-auto mb-2 mb-lg-0">
+       <li class="nav-item dropdown">
+ <%= link_to 'Home', properties_path, class: 'nav-link' %>
+ </li>
+  <li class="nav-item dropdown">
+          <%= link_to 'Nueva Propiedad', new_property_path, class: 'nav-link' %>
+        </li>
+    <li class="nav-item">
+          <%= link_to 'Nuevo cliente', new_client_path, class: 'nav-link' %>
+        </li>
+<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
+ <ul class="dropdown-menu">
+ <li><%= button_to 'Cerrar sesión', destroy_user_session_path, class: 'dropdown-item', method: :delete %></li>
+ <li><%= link_to 'Iniciar sesión', new_user_session_path, class: 'dropdown-item'%></li>
+ <li><hr class="dropdown-divider"></li>
+ <li><%= link_to 'Registro', new_user_registration_path, class: 'dropdown-item'%></li>
+ </ul>
+
+<ul class="dropdown-menu">
+ <% if user_signed_in? %>
+ <li><%= button_to 'Cerrar sesión', destroy_user_session_path, class: 'dropdown-item', method:
+:delete %></li>
+ <% else %>
+ <li><%= link_to 'Iniciar sesión', new_user_session_path, class: 'dropdown-item'%></li>
+ <li><hr class="dropdown-divider"></li>
+ <li><%= link_to 'Registro', new_user_registration_path, class: 'dropdown-item'%></li>
+ <% end %>
+</ul>
+
+<a class="nav-link dropdown-toggle" href="#" role="button"
+data-bs-toggle="dropdown" aria-expanded="false">
+ <% if user_signed_in? %>
+ Hola <%= current_user.email %>
+ <% else %>
+ Dale registrate o conectate
+ <% end %>
+</a>
+    
+    
+    </div>
+  </div>
+</nav>

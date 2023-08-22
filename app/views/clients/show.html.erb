@@ -1,0 +1,25 @@
+<p style="color: green"><%= notice %></p>
+
+<table class="table table-striped">
+<thead>
+<tr>
+<th scope="col">id</th>
+<th scope="col">Name</th>
+<th scope="col">Age</th>
+<th scope="col">City</th>
+<th scope="col">Property</th>
+<th scope="col" colspan="4"></th>
+</tr>
+</thead>
+
+<tbody>
+
+<%= render @client %>
+</tbody>
+</table>
+<div>
+  <%= link_to "Edit this client", edit_client_path(@client) %> |
+  <%= link_to "Back to clients", clients_path %>
+
+  <%= button_to "Destroy this client", @client, method: :delete %>
+</div>

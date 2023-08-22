@@ -1,0 +1,33 @@
+<p style="color: green"><%= notice %></p>
+
+<div class="container">
+<h1>Properties</h1>
+
+<div id="properties">
+<table class="table table-striped">
+<thead>
+<tr>
+<th scope="col">id</th>
+<th scope="col">Tipo Propiedad</th>
+<th scope="col"> Tipo Operación</th>
+<th scope="col">Metros Cuadrados</th>
+<th scope="col">Dirección</th>
+<th scope="col">Contacto</th>
+<th scope="col">Imagen</th>
+<th scope="col" colspan="2"></th>
+</tr>
+</thead>
+<tbody>
+  <% @properties.each do |property| %>
+    <%= render property %>
+    <p>
+      <%= link_to "Show this property", property %>
+    </p>
+  <% end %>
+
+</tbody>
+</table>
+
+</div>
+
+<%= link_to "New property", new_property_path %>

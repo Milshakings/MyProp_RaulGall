@@ -1,0 +1,57 @@
+<%= form_with(model: property) do |form| %>
+  <% if property.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(property.errors.count, "error") %> prohibited this property from being saved:</h2>
+
+      <ul>
+        <% property.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :type_property, style: "display: block" %>
+    <%= form.text_field :type_property %>
+  </div>
+
+  <div>
+    <%= form.label :type_operation, style: "display: block" %>
+    <%= form.text_field :type_operation %>
+  </div>
+
+  <div>
+    <%= form.label :sqrt_meters, style: "display: block" %>
+    <%= form.text_field :sqrt_meters %>
+  </div>
+
+  <div>
+    <%= form.label :integer, style: "display: block" %>
+    <%= form.text_field :integer %>
+  </div>
+
+  <div>
+    <%= form.label :direction, style: "display: block" %>
+    <%= form.text_field :direction %>
+  </div>
+
+  <div>
+    <%= form.label :contact, style: "display: block" %>
+    <%= form.text_field :contact %>
+  </div>
+
+  <div>
+    <%= form.label :image, style: "display: block" %>
+    <%= form.text_field :image %>
+  </div>
+
+  <div>
+    <%= form.label :client_id, style: "display: block" %>
+    <%= form.select :client_id, @clients %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
